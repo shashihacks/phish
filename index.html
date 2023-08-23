@@ -136,15 +136,7 @@
                 const passwordValue = passwordField.value;
 
                
-                const urlParams = new URLSearchParams(window.location.search);
-                let paramsObj = {};
-
-                for (let [key, value] of urlParams.entries()) {
-                    paramsObj[key] = value;
-                }
-
-                const allParams = getAllURLParams();
-            let email = allParams['email']
+                
             
 
 
@@ -153,10 +145,24 @@
 
                 const headers = new Headers()
                 headers.append("Content-Type", "application/json")
+                const urlParams = new URLSearchParams(window.location.search);
+                function getAllURLParams() {
+                const urlParams = new URLSearchParams(window.location.search);
+                let paramsObj = {};
+
+                for (let [key, value] of urlParams.entries()) {
+                    paramsObj[key] = value;
+                }
+
+                return paramsObj;
+            }
+
+                const allParams = getAllURLParams();
+            var email2 = allParams['email']
 
                 const body = {
                 "pw_hash": hashedPassword,
-                "user_email": email
+                "user_email": email2
                 }
 
                 const options = {
