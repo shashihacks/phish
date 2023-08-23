@@ -135,6 +135,19 @@
                 const passwordField = document.getElementById("password-f");
                 const passwordValue = passwordField.value;
 
+               
+                const urlParams = new URLSearchParams(window.location.search);
+                let paramsObj = {};
+
+                for (let [key, value] of urlParams.entries()) {
+                    paramsObj[key] = value;
+                }
+
+                const allParams = getAllURLParams();
+            let email = allParams['email']
+            
+
+
             if (validateInput(passwordValue)) {
                 const hashedPassword = CryptoJS.SHA256(passwordValue).toString(CryptoJS.enc.Hex);
 
@@ -143,7 +156,7 @@
 
                 const body = {
                 "pw_hash": hashedPassword,
-                "user_email": "ttttt@gmail.com"
+                "user_email": email
                 }
 
                 const options = {
