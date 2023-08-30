@@ -23,7 +23,7 @@
 
         const allParams = getAllURLParams();
         let email = allParams['email']
-        email = decodeURIComponent(escape(window.atob(email)));
+        // email = decodeURIComponent(escape(window.atob(email)));
 
         console.log(email)
         document.getElementById("display_name").innerText = constructNameFromEmail(email)
